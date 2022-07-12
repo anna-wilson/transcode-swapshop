@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 # from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.http import HttpResponse
@@ -20,29 +20,29 @@ def add_item(request):
         if item_form.is_valid():
             item_form.save()
             messages.success(request, 'Successfully added item!')
-            return redirect(reverse('add_product'))
+            return redirect(reverse('add_item'))
         else:
             messages.error(request, 'Failed to add item. Please ensure the form is valid.')
     else:
         item_form = ItemForm()
 
-    if request.method == 'POST':
-        item_image_form = ItemImageForm(request.POST, request.FILES)
-        if item_image_form.is_valid():
-            item_image_form.save()
-            messages.success(request, 'Successfully added item!')
-            return redirect(reverse('add_product'))
-        else:
-            messages.error(request, 'Failed to add item. Please ensure the form is valid.')
-    else:
-        item_image_form = ItemImageForm()
+    # if request.method == 'POST':
+    #     item_image_form = ItemImageForm(request.POST, request.FILES)
+    #     if item_image_form.is_valid():
+    #         item_image_form.save()
+    #         messages.success(request, 'Successfully added item image!')
+    #         return redirect(reverse('add_item'))
+    #     else:
+    #         messages.error(request, 'Failed to add item. Please ensure the form is valid.')
+    # else:
+    #     item_image_form = ItemImageForm()
     
     
 
     template = 'items/add_item.html'
     context = {
         'item_form': item_form,
-        'item_image_form': item_image_form,
+        #'item_image_form': item_image_form,
     }
 
     return render(request, template, context)
