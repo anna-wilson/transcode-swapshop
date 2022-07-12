@@ -1,0 +1,15 @@
+
+<form method="POST" action="{% url 'add_item' %}" class="form" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ item_form }}
+        <button class="btn btn-black" type="submit">Add Item</button>
+    </div>
+</form>
+
+<form method="POST" action="{% url 'add_item' %}" class="form" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ item_image_form }}
+        <button class="btn btn-black" type="submit">Add Item</button>
+    </div>
+</form>
+
