@@ -1,9 +1,33 @@
+{% extends 'items/base.html' %}
+
+{% block content %}
+
 {% if itemlist %}
-    <ul>
-    {% for item in itemlist %}
-        <li><a href="/items/{{ item.id }}/">{{ item.name }}</a></li>
-    {% endfor %}
-    </ul>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+{% for item in itemlist %}
+
+
+
+    <div class="col">
+        <div class="card">
+            <img src="/media/{{ item.itemimage_set.all | first }}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.name }}</h5>
+                <p class="card-text">Description goes here</p>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endfor %}
+
+</div>
+
 {% else %}
     <p>No items are available.</p>
 {% endif %}
+
+{% endblock %}
