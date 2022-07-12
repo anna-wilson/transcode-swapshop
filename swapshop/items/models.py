@@ -16,7 +16,7 @@ class ItemImage(models.Model):
     desc = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.item.name
+        return str(self.img)
 
 class Comment(models.Model):
     item = models.ForeignKey(
