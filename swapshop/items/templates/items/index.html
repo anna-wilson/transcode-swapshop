@@ -1,0 +1,9 @@
+{% if itemlist %}
+    <ul>
+    {% for item in itemlist %}
+        <li><a href="/items/{{ item.id }}/">{{ item.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No items are available.</p>
+{% endif %}
