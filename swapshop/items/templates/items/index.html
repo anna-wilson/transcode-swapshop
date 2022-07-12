@@ -22,7 +22,7 @@
             <img src="/media/{{ item.itemimage_set.all | first }}" class="card-img-top">
             <div class="card-body">
                 <h5 class="card-title">{{ item.name }}</h5>
-                <p class="card-text">Description goes here</p>
+                <a href="/items/item_detail/{{ item.id }}" class="btn btn-primary stretched-link">View</a>
             </div>
         </div>
     </div>
