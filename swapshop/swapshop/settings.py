@@ -28,6 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-elyserh-transcodeswapsh-1863zy2zxwg.ws-eu53.gitpod.io']
+
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
