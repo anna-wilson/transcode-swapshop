@@ -1,15 +1,19 @@
+{% extends 'items/base.html' %}
+{% load django_bootstrap5 %}
+
+{% block buttons %}
+
+
+
+{% endblock %}
+
+{% block content %}
 
 <form method="POST" action="{% url 'add_item' %}" class="form" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ item_form }}
-        <button class="btn btn-black" type="submit">Add Item</button>
-    </div>
+    {% bootstrap_form item_form %}
+    {% bootstrap_button button_type="submit" content="Add item" %}
 </form>
 
-<form method="POST" action="{% url 'add_item' %}" class="form" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ item_image_form }}
-        <button class="btn btn-black" type="submit">Add Item</button>
-    </div>
-</form>
 
+{% endblock %}

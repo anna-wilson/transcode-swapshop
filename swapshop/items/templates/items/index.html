@@ -1,4 +1,11 @@
 {% extends 'items/base.html' %}
+{% load django_bootstrap5 %}
+
+{% block buttons %}
+
+{% bootstrap_button "Add an item" button_type="link" href="/items/add_item" %}
+
+{% endblock %}
 
 {% block content %}
 

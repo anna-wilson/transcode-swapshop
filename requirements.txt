@@ -1,3 +1,4 @@
 Django
 Pillow
 django-allauth
+django-bootstrap5
