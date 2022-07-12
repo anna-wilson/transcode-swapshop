@@ -1,0 +1,15 @@
+<h1>Individual item</h1>
+
+<form method="POST" action="{% url 'add_item_image' item.id %}" class="form" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ item_image_form }}
+        <button class="btn btn-black" type="submit">Add Item Image</button>
+    </div>
+</form>
+
+<form method="POST" action="{% url 'item_detail' item.id %}" class="form" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ comment_form }}
+        <button class="btn btn-black" type="submit">Add Comment</button>
+    </div>
+</form>
